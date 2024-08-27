@@ -18,51 +18,58 @@
         <div class="calculadora">
             <form>
                 <div id="campotexto">
-                    <input type="text" name="display">
+                    <input type="text" id="display" name="display">
                 </div>
                 <div class="button">
                     <input type="button" value="MC">
-                    <input type="button" value="MR">
+                    <input type="button" value="MR" onclick = "memoryrecall()">
                     <input type="button" value="MS">
-                    <input type="button" value="M+">
+                    <input type="button" value="M+" onclick="memoryplus()">
                     <input type="button" value="M-">
                 </div>
                 <div class="button">
-                    <input type="button" value="←">
+                    <input type="button" value="←" onclick="display.value = display.value.toString().slice(0,-1)">  
+                    <!--// O método .toString() transforma o valor em texto (string).
+                    O .slice(0, -1) pega a string e remove o último caractere.
+                    Por exemplo: se tivermos o número 1234, ele vira "1234" (texto) e o slice corta o último número, ficando "123".
+                    -->
                     <input type="button" value="CE">
-                    <input type="button" value="C">
-                    <input type="button" value="±">
-                    <input type="button" value="√">
+                    <input type="button" value="C" onclick = "display.value = ''">
+                    <input type="button" value="±" onclick= "maismenos()">
+                    <input type="button" value="√" onclick = "raiz()">
                 </div>
                 <div class="button">
-                    <input type="button" value="7">
-                    <input type="button" value="8">
-                    <input type="button" value="9">
-                    <input type="button" value="/">
+                    <input type="button" value="7" onclick="display.value += '7'">
+                    <input type="button" value="8" onclick="display.value += '8'">
+                    <input type="button" value="9" onclick="display.value += '9'">
+                    <input type="button" value="/" onclick="display.value += '/'">
                     <input type="button" value="%">
                 </div>
                 <div class="button">
-                    <input type="button" value="4">
-                    <input type="button" value="5">
-                    <input type="button" value="6">
-                    <input type="button" value="*">
+                    <input type="button" value="4" onclick="display.value += '4'">
+                    <input type="button" value="5" onclick="display.value += '5'">
+                    <input type="button" value="6" onclick="display.value += '6'">
+                    <input type="button" value="*" onclick="display.value += '*'">
                     <input type="button" value="1/X">
                 </div>
                 <div class="button">
-                    <input type="button" value="1">
-                    <input type="button" value="2">
-                    <input type="button" value="3">
-                    <input type="button" value="-">
-                    <input type="button" value="=">
+                    <input type="button" value="1" onclick="display.value += '1'">
+                    <input type="button" value="2" onclick="display.value += '2'">
+                    <input type="button" value="3" onclick="display.value += '3'">
+                    <input type="button" value="-" onclick="display.value += '-'">
+                    <input type="button" id="igual" value="=" onclick="display.value = eval(display.value)">
+                    <!-- Quando o botão é clicado (onclick), o valor atual do campo de entrada 'display' (que geralmente contém uma expressão matemática como "2+3*4") é avaliado pela função 'eval()'. 
+                    A função 'eval()' pega a string da expressão e executa a operação matemática. 
+                    O resultado dessa avaliação (por exemplo, "14" para a expressão "2+3*4") é então atribuído de volta ao campo 'display.value', substituindo a expressão original pelo resultado.-->
                 </div>
                 <div class="button">
-                    <input type="button" value="0">
-                    <input type="button" value=",">
-                    <input type="button" value="3">
-                    <input type="button" value="+">
+                    <input type="button" id="zero" value="0" onclick="display.value += '0'">
+                    <input type="button" value="." onclick="display.value += '.'">
+                    <input type="button" value="+" onclick="display.value += '+'">
                 </div>
             </form>
         </div>
     </div>
+    <script src="./script.js"></script>
 </body>
 </html>

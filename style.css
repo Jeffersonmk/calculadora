@@ -2,6 +2,11 @@ body {
     background-color: lightblue;
 }
 
+@font-face {
+    font-family: 'Digital-7';
+    src: url('./Fonts/digital-7.ttf') format('truetype');
+}
+
 h1 {
     text-align: center;
     font-family: "Roboto", sans-serif;
@@ -9,7 +14,8 @@ h1 {
     font-style: normal;
     color: whitesmoke;
     text-shadow: 2px 2px 4px rgba(0,0,0, 0.5);
-    padding-top: 30px;
+    padding-top: 50px;
+    font-size: 50px;
 }
 
 .container {
@@ -22,11 +28,12 @@ h1 {
 
 .calculadora {
     background: #ffffff;
-    padding: 20px;
+    padding: 20px 10px 0px 20px; /* Padding: cima, direita, baixo, esquerda */
     border-radius: 20px;
     height: 500px;
     width: 300px;
-    border: 10px solid #ababab ;
+    border: 10px solid #ababab;
+    margin-bottom: 300px;
 }
 
 #campotexto input {
@@ -34,8 +41,15 @@ h1 {
     margin-bottom: 20px;
     border-radius: 10px;
     height: 80px;
-    width: 290px;
+    width: 280px;
     border: 2px solid #b4b5b9;
+    font-family: 'Digital-7', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.button {
+    position: relative; /* Define o contêiner como ponto de referência para o botão #igual */
 }
 
 .button input {
@@ -45,9 +59,20 @@ h1 {
     width: 50px;
     height: 50px;
     font-family: "Tajawal", sans-serif;
-    font-weight: 700;
     font-style: normal;
     font-size: 20px;
     margin-bottom: 10px;
     margin-right: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#zero {
+    width: 110px;
+}
+
+#igual {
+    position: absolute; /* Remove o botão do fluxo normal do layout */
+    right: 8px; 
+    height: 110px;
 }
