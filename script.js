@@ -25,9 +25,7 @@ function maismenos() {
 
 function raiz() {
     const display = document.getElementById('display');
-    
     let valor = display.value;
-
     const ultimoNumeroMatch = valor.match(/-?\d+(\.\d+)?$/);
 
     if (ultimoNumeroMatch) {
@@ -42,17 +40,41 @@ function raiz() {
     }
 }
 
+let valorGuardado = 0;
+
 function memoryplus() {
     const display = document.getElementById('display');
-
-    let valorGuardado = 0;
-
     valorGuardado = valorGuardado + Number(display.value);
-
     document.getElementById('display').value = '';
-
-    document.getElementById('display').value = valorGuardado;
-
-    console.log('valorGuardado')
 }
 
+function memoryminus() {
+    const display = document.getElementById('display');
+    valorGuardado = valorGuardado - Number(display.value);
+    document.getElementById('display').value = '';
+}
+
+function memoryrecall() {
+    document.getElementById('display').value = valorGuardado;
+}
+
+function memoryclear() {
+    valorGuardado = 0;
+    document.getElementById('display').value = '';
+}
+
+function memorystore() {
+    const display = document.getElementById('display');
+    valorGuardado = Number(display.value);
+    document.getElementById('display').value = '';
+}
+
+function clearentry() {
+    document.getElementById('display').value = '';
+}
+
+function inversomultiplicativo() {
+    const display = document.getElementById('display');
+    let inversoMulti = 1 / Number(display.value);
+    display.value = inversoMulti;
+}

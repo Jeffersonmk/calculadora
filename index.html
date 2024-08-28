@@ -21,11 +21,11 @@
                     <input type="text" id="display" name="display">
                 </div>
                 <div class="button">
-                    <input type="button" value="MC">
+                    <input type="button" value="MC" onclick = "memoryclear()">
                     <input type="button" value="MR" onclick = "memoryrecall()">
-                    <input type="button" value="MS">
-                    <input type="button" value="M+" onclick="memoryplus()">
-                    <input type="button" value="M-">
+                    <input type="button" value="MS" onclick = "memorystore()">
+                    <input type="button" value="M+" onclick = "memoryplus()">
+                    <input type="button" value="M-" onclick = "memoryminus()">
                 </div>
                 <div class="button">
                     <input type="button" value="←" onclick="display.value = display.value.toString().slice(0,-1)">  
@@ -33,10 +33,10 @@
                     O .slice(0, -1) pega a string e remove o último caractere.
                     Por exemplo: se tivermos o número 1234, ele vira "1234" (texto) e o slice corta o último número, ficando "123".
                     -->
-                    <input type="button" value="CE">
-                    <input type="button" value="C" onclick = "display.value = ''">
-                    <input type="button" value="±" onclick= "maismenos()">
-                    <input type="button" value="√" onclick = "raiz()">
+                    <input type="button" value="CE" onclick="clearentry()">
+                    <input type="button" value="C" onclick="clear()">
+                    <input type="button" value="±" onclick="maismenos()">
+                    <input type="button" value="√" onclick="raiz()">
                 </div>
                 <div class="button">
                     <input type="button" value="7" onclick="display.value += '7'">
@@ -50,7 +50,7 @@
                     <input type="button" value="5" onclick="display.value += '5'">
                     <input type="button" value="6" onclick="display.value += '6'">
                     <input type="button" value="*" onclick="display.value += '*'">
-                    <input type="button" value="1/X">
+                    <input type="button" value="1/X" onclick="inversomultiplicativo()">
                 </div>
                 <div class="button">
                     <input type="button" value="1" onclick="display.value += '1'">
