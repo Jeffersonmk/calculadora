@@ -33,8 +33,8 @@
                     O .slice(0, -1) pega a string e remove o último caractere.
                     Por exemplo: se tivermos o número 1234, ele vira "1234" (texto) e o slice corta o último número, ficando "123".
                     -->
-                    <input type="button" value="CE" onclick="clearentry()">
-                    <input type="button" value="C" onclick="clear()">
+                    <input type="button" value="CE" onclick="limparentrada()">
+                    <input type="button" value="C" onclick="apagar()">
                     <input type="button" value="±" onclick="maismenos()">
                     <input type="button" value="√" onclick="raiz()">
                 </div>
@@ -43,7 +43,7 @@
                     <input type="button" value="8" onclick="display.value += '8'">
                     <input type="button" value="9" onclick="display.value += '9'">
                     <input type="button" value="/" onclick="display.value += '/'">
-                    <input type="button" value="%">
+                    <input type="button" value="%" onclick="porcentagem()">
                 </div>
                 <div class="button">
                     <input type="button" value="4" onclick="display.value += '4'">

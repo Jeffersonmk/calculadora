@@ -45,13 +45,13 @@ let valorGuardado = 0;
 function memoryplus() {
     const display = document.getElementById('display');
     valorGuardado = valorGuardado + Number(display.value);
-    document.getElementById('display').value = '';
+    document.getElementById('display').value = '0';
 }
 
 function memoryminus() {
     const display = document.getElementById('display');
     valorGuardado = valorGuardado - Number(display.value);
-    document.getElementById('display').value = '';
+    document.getElementById('display').value = '0';
 }
 
 function memoryrecall() {
@@ -60,17 +60,21 @@ function memoryrecall() {
 
 function memoryclear() {
     valorGuardado = 0;
-    document.getElementById('display').value = '';
 }
 
 function memorystore() {
     const display = document.getElementById('display');
     valorGuardado = Number(display.value);
-    document.getElementById('display').value = '';
+    document.getElementById('display').value = '0';
 }
 
-function clearentry() {
-    document.getElementById('display').value = '';
+function apagar() {
+    valorGuardado = 0;
+    document.getElementById('display').value = '0';
+}
+
+function limparentrada() {
+    document.getElementById('display').value = '0';
 }
 
 function inversomultiplicativo() {
@@ -78,3 +82,10 @@ function inversomultiplicativo() {
     let inversoMulti = 1 / Number(display.value);
     display.value = inversoMulti;
 }
+
+function porcentagem() {
+    const display = document.getElementById('display');
+    let porcentagem = Number(display.value) / 100;
+    display.value = porcentagem;
+}
+
